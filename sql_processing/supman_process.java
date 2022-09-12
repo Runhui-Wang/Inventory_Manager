@@ -65,24 +65,9 @@ public static int writeSupSun(String subname ,String sunname) {
 		return 3;
 	}
 	
-
 }
+	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//读取全部
 	public static void readSup(JComboBox cmb1) {
 		
 

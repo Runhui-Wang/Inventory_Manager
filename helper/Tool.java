@@ -9,16 +9,16 @@ import javax.swing.table.DefaultTableModel;
 public class Tool {
     public static void setWindowPosCenter(int WIDTH,int HEIGHT,JFrame jframe) {
 		
-		Toolkit kit =Toolkit.getDefaultToolkit();//获取对象大小	//设置窗口位置
+		Toolkit kit =Toolkit.getDefaultToolkit();
 		Dimension screenSize=kit.getScreenSize();
 		int width=screenSize.width;
-		int height=screenSize.height;//获取屏幕高度和宽度
+		int height=screenSize.height;
 		int x=(width-WIDTH)/2;
 		int y=(height-HEIGHT)/2;
 		jframe.setBounds(x, y, WIDTH, HEIGHT);
 		
 	}
-	//添加表格的模块化工具
+	//Function for forms
 	public static  int addDataTable(ResultSet rs ,DefaultTableModel  model,int index) {
 		
 		int count=0;
@@ -39,7 +39,6 @@ public class Tool {
 			rs.close();
 			return count;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return count;
 		}

@@ -277,7 +277,6 @@ public class inventory_out extends JPanel{
 		}
 			
 		});
-		//删除出库记录
 		
 		
 		JB2.addActionListener(new ActionListener() {
@@ -319,18 +318,17 @@ public class inventory_out extends JPanel{
 			
 		});
 		
-		//更改
-		//更改数据
+
 		JB3.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				String sup=null;//供应商
-				String sun=null;//子产品
-				String num=null;//数量
-				String pric=null;//价格
-				String ID=null;//价格
+
+				String sup=null;
+				String sun=null;
+				String num=null;
+				String pric=null;
+				String ID=null;
 				String user=null;
 				if(stockNum.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Enter ID #", "Message",JOptionPane.WARNING_MESSAGE);
@@ -353,14 +351,13 @@ public class inventory_out extends JPanel{
 						
 						int c=staffstock_process.showTimeOut(stockNum.getText());
 						if(c==1) {
-							//写入 
+							//Write 
 							sup=(String) cmbSupName.getSelectedItem();
 							sun=(String) cmbStockName.getSelectedItem();
 							num=stockNumOut.getText();
 							pric=stockPricOut.getText();
 							ID=stockNum.getText();
 							user=stockUser.getText();
-							//将四个值传入数据库
 							int a=outstock_process.changeStockData(sup, sun, num, pric,user, ID);
 							if(a==0) {
 								JOptionPane.showMessageDialog(null, "Nothing changed", "Message",JOptionPane.WARNING_MESSAGE);
