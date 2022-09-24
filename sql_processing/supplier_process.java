@@ -5,7 +5,7 @@ import java.sql.*;
 import javax.swing.JComboBox;
 
 import management_sql.connect;
-public class supman_process {
+public class supplier_process {
     static Connection con = connect.sqlc;
 
 	public static int writeSup(String name) {
@@ -47,7 +47,7 @@ public static int dellSup(String name) {
 
 	}
 
-public static int writeSupSun(String subname ,String sunname) {
+public static int writeSupSun(String subname ,String product_name) {
 	
 	PreparedStatement preSql;
 	int  num;
@@ -55,7 +55,7 @@ public static int writeSupSun(String subname ,String sunname) {
 	
 	try {
 		preSql=con.prepareStatement(sqlStr);
-		preSql.setString(1, sunname);
+		preSql.setString(1, product_name);
 		preSql.setString(2, subname);
 	
 		num=preSql.executeUpdate();

@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import management_sql.connect;
-public class staffstock_process {
+public class staff_process {
     static Connection con = connect.sqlc;
     public static int showTime(String num) {
 		

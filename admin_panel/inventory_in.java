@@ -8,7 +8,7 @@ import javax.swing.table.TableColumnModel;
 
 import helper.Tool;
 import sql_processing.instock_process;
-import sql_processing.supman_process;
+import sql_processing.supplier_process;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -113,7 +113,7 @@ public class inventory_in extends JPanel{
 		this.add(jpan2);
 		table();
 		this.add(jscrollpane);
-		supman_process.readSup(inventory_in.cmbSupName);
+		supplier_process.readSup(inventory_in.cmbSupName);
 
 		JB1.addActionListener(new ActionListener() {
 
@@ -163,7 +163,7 @@ public class inventory_in extends JPanel{
 
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				supman_process.readSun(cmbStockName, (String )cmbSupName.getSelectedItem());
+				supplier_process.readSun(cmbStockName, (String )cmbSupName.getSelectedItem());
 			
 				
 			}

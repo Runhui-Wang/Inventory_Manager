@@ -4,7 +4,7 @@ import java.sql.*;
 import management_sql.connect;
 public class outstock_process {
     static Connection con = connect.sqlc;
-    public static int  writeStock(String sup,String sunname,String num1,String pri,String user) {
+    public static int  writeStock(String sup,String product_name,String num1,String pri,String user) {
 		PreparedStatement preSql;
 
 		String sqlStr="insert into outstock(supname,stockname,outtime,num,pric,user) values(?,?,now(),?,?,?)";
@@ -12,7 +12,7 @@ public class outstock_process {
 		try {
 			preSql=con.prepareStatement(sqlStr);
 			preSql.setString(1, sup);
-			preSql.setString(2, sunname);
+			preSql.setString(2, product_name);
 			preSql.setString(3, num1);
 			preSql.setString(4, pri);
 			preSql.setString(5, user);
@@ -108,7 +108,7 @@ public class outstock_process {
 					return num1;
 					
 				}catch(SQLException e) {
-					if(e.getMessage().equals("仓库库存不足不能进行更改出货")) {
+					if(e.getMessage().equals("Insufficient")) {
 						return 4;
 					}else {
 						return 3;

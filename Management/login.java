@@ -12,7 +12,7 @@ import Mangement_Style.style;
 import admin_panel.inventory_in;
 import sql_processing.instock_process;
 import sql_processing.login_process;
-import sql_processing.supman_process;
+import sql_processing.supplier_process;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;

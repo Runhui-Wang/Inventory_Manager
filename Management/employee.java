@@ -13,7 +13,7 @@ import admin_panel.inventory_out;
 import helper.Tool;
 import sql_processing.instock_process;
 import sql_processing.outstock_process;
-import sql_processing.supman_process;
+import sql_processing.supplier_process;
 
 public class employee {
     String buton[] ={"Enter","Retrieve"};
@@ -78,7 +78,7 @@ public class employee {
 					JButton jbl=(JButton)e.getSource();
 					if(jbl.getName().equals(butonName[0])) {
 						jpanel2.moveToFront(inpan);
-						supman_process.readSup(inventory_in.cmbSupName);
+						supplier_process.readSup(inventory_in.cmbSupName);
 						
 					
 						
@@ -86,7 +86,7 @@ public class employee {
 					
 					if(jbl.getName().equals(butonName[1])) {
 						jpanel2.moveToFront(outpan);
-						supman_process.readSup(inventory_out.cmbSupName);
+						supplier_process.readSup(inventory_out.cmbSupName);
 						
 					}
 			

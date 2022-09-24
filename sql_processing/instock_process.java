@@ -3,8 +3,8 @@ import java.sql.*;
 
 import management_sql.connect;
 public class instock_process {
-    static Connection con = connect.sqlc;
-    public static int  writeStock(String sup,String sunname,String num1,String pri) {
+    static Connection con = connect.sqlc;//connection
+    public static int  writeStock(String sup,String product_name,String num1,String pri) {
 		PreparedStatement preSql;
 
 		String sqlStr="insert into instock(supname,stockname,intime,num,pric) values(?,?,now(),?,?)";
@@ -12,7 +12,7 @@ public class instock_process {
 		try {
 			preSql=con.prepareStatement(sqlStr);
 			preSql.setString(1, sup);
-			preSql.setString(2, sunname);
+			preSql.setString(2, product_name);
 			preSql.setString(3, num1);
 			preSql.setString(4, pri);
 			

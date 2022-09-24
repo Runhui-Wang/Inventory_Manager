@@ -18,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
 
 import helper.Tool;
 import sql_processing.outstock_process;
-import sql_processing.staffstock_process;
-import sql_processing.supman_process;
+import sql_processing.staff_process;
+import sql_processing.supplier_process;
 
 
 public class inventory_out extends JPanel{
@@ -142,7 +142,7 @@ public class inventory_out extends JPanel{
 
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				supman_process.readSun(cmbStockName, (String )cmbSupName.getSelectedItem());
+				supplier_process.readSun(cmbStockName, (String )cmbSupName.getSelectedItem());
 			}
 		});
 		JB1.addActionListener(new ActionListener() {
@@ -289,7 +289,7 @@ public class inventory_out extends JPanel{
 				}else {
 					
 					
-					int c=staffstock_process.showTimeOut(num);
+					int c=staff_process.showTimeOut(num);
 					if(c==1) {
 						int a=outstock_process.dellStockData(num);
 						if(a==0) {
@@ -349,7 +349,7 @@ public class inventory_out extends JPanel{
 						
 					}else{
 						
-						int c=staffstock_process.showTimeOut(stockNum.getText());
+						int c=staff_process.showTimeOut(stockNum.getText());
 						if(c==1) {
 							//Write 
 							sup=(String) cmbSupName.getSelectedItem();
