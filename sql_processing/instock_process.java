@@ -6,7 +6,7 @@ public class instock_process {
     static Connection con = connect.sqlc;//connection
     public static int  writeStock(String sup,String product_name,String num1,String pri) {
 		PreparedStatement preSql;
-
+		//Sql statement for new products in warehouse
 		String sqlStr="insert into instock(supname,stockname,intime,num,pric) values(?,?,now(),?,?)";
 		int num=0;
 		try {
@@ -27,6 +27,7 @@ public class instock_process {
 	public static ResultSet  findStockoneData(String num) {
 		PreparedStatement preSql;
 		String  data[]=new String [6];
+		//sql for query
 		String sqlStr="select instock.id,instock.supname,instock.stockname,instock.intime,instock.num,instock.pric,product.stock from instock,product where product.supname=instock.supname and product.`name`=instock.stockname and id=?";
 		ResultSet rs=null ;
 		int count=0;
@@ -45,7 +46,7 @@ public class instock_process {
 
 	public static ResultSet  findStockallData() {
 		PreparedStatement preSql;
-
+		//sql for query
 		String  data []=new String [6];
 		String sqlStr="select instock.id,instock.supname,instock.stockname,instock.intime,instock.num,instock.pric,product.stock from instock,product where product.supname=instock.supname and product.`name`=instock.stockname";
 		ResultSet rs=null ;
@@ -61,7 +62,7 @@ public class instock_process {
 	}
 	public static int dellStockData(String id) {
 		PreparedStatement preSql;
-
+		//sql for deletion of record
 		String sqlStr="delete from instock where id=?";
 		int num=0;
 		try {
@@ -85,10 +86,11 @@ public class instock_process {
 	PreparedStatement preSql;
 		
 		
-
+		//update instock 
 		String sqlStr="UPDATE instock set supname=? ,stockname=? ,num=?,pric=? where id=?";
 		int num1=0;
 		try {
+			//change the previous record 
 			preSql=con.prepareStatement(sqlStr);
 			preSql.setString(1,sup);
 			preSql.setString(2,sun);
@@ -99,6 +101,7 @@ public class instock_process {
 			return num1;
 			
 		}catch(SQLException e) {
+			//catch exception caused by the change. 
 			if(e.getMessage().equals("Insufficient Inventory")) {
 				return 4;
 			}else {

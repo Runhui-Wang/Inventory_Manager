@@ -7,7 +7,7 @@ public class AddAccount {
     static Connection con = connect.sqlc;
     public static int  writeAccount(String account,String password,String name,String address,String emain) {
 		PreparedStatement preSql;//Processed statement
-		String sqlStr="insert into users(account,`password`,sname,saddress,semail) values(?,?,?,?,?)";
+		String sqlStr="insert into users(account,`password`,sname,saddress,semail) values(?,?,?,?,?)";//Sql Statement for new account
 		int num=0;
 		try {
 			preSql=con.prepareStatement(sqlStr);
@@ -20,7 +20,7 @@ public class AddAccount {
 			return num;
 			
 		}catch(SQLException e) {
-			
+			//catch exception
 			return 3;
 		}
 	}
