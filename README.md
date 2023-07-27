@@ -1,4 +1,4 @@
-# Restaurant_Inventory_Managing_System
+# Inventory Manager
 
 This Project is what I created for a restaurant owned by my parents. Instead of using inventory management app, this one is neat and easy to use. 
 It contains several different functions that are good enough for a small chain of restaurants. 
